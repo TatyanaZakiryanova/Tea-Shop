@@ -23,11 +23,10 @@ button {
     padding: 5px;
     box-sizing: border-box;
     border-radius: $radius;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
     &:hover {
         background-color: $highlight;
         cursor: pointer;
-        transform: scale(0.95);
     }
 }
 
