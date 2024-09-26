@@ -12,12 +12,14 @@
             max-width: 550px;
             .title {
                 margin: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             }
         }
         .cartbutton {
             align-self: flex-end;
             min-width: 50px;
             font-size: $size;
+            margin: 5px;
             .cartlink {
             text-decoration: none;
             color:  black;

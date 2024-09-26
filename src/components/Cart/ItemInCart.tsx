@@ -47,7 +47,11 @@ const ItemInCart: React.FC<CartItem> = ({
             <button onClick={onClickPlusAmount} className={styles.amountbutton}>
               +
             </button>
-            <button disabled={count === 1} onClick={onClickMinusAmount}>
+            <button
+              disabled={count === 1}
+              onClick={onClickMinusAmount}
+              className={styles.amountbutton}
+            >
               -
             </button>
           </h4>

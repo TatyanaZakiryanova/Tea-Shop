@@ -24,6 +24,15 @@
         p {
             font-size: 15px;
         }
+        .weight {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button {
+                font-size: 12px;
+                padding: 5px;
+            }
+        }
         .activebutton {
             @include activebutton;
         }

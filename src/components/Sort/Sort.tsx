@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { setSortParam } from '../../redux/filterSlice/filterSlice';
-import { PiSortAscendingLight } from 'react-icons/pi';
 import { useAppDispatch } from '../../redux/store';
 import { SortEnum, SortName } from '../../redux/filterSlice/types';
 import styles from './Sort.module.scss';
@@ -37,7 +36,6 @@ export const Sort = (): JSX.Element => {
   return (
     <div className={styles.sort}>
       <div className={styles.label}>
-        <PiSortAscendingLight className={styles.icon} />
         <h2>
           Sort by: <span onClick={() => setActiveSort(!activeSort)}>{sortName.name}</span>
         </h2>

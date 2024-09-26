@@ -39,7 +39,7 @@ const Cart = (): JSX.Element => {
       </div>
       <div className={styles.inform}>
         <div className={styles.total}>Total: {totalCost}</div>
-        <button>Place an order</button>
+        <button className={styles.order}>Place an order</button>
       </div>
       <div>
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>

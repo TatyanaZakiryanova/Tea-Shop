@@ -20,14 +20,21 @@ body {
 button {
     border: none;
     font-size: 1.2rem;
-    padding: 5px;
+    padding: 7px;
     box-sizing: border-box;
     border-radius: $radius;
-    transition: all 0.15s ease-in-out;
+    background-color: white;
+    color: rgb(47, 79, 70); 
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     &:hover {
-        background-color: $highlight;
-        cursor: pointer;
-    }
+      background-color: rgb(103, 150, 137); 
+  }
+  &:focus {
+      outline: none; 
+      box-shadow: 0 0 0 1px rgba(103, 150, 137, 0.5); 
+  }
 }
 
   li {

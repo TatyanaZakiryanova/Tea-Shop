@@ -36,6 +36,7 @@ const TeaPage = () => {
               {tea.description}
             </p>
             <ul className={styles.weight}>
+              Weight:
               {tea.weight.map((grams, index) => (
                 <li key={grams}>
                   <button

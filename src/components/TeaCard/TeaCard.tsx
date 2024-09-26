@@ -34,14 +34,14 @@ export const TeaCard: React.FC<SingleTea> = ({
           <h4 className={styles.price}>{price}</h4>
           <h4>Type: {type} tea</h4>
           <h4>Rating: {rating}</h4>
-          <div>
+          <div className={styles.weight}>
             <h4>Weight:</h4>
             <ul>
               {weight.map((grams, index) => (
                 <li key={grams}>
                   <button
                     onClick={() => setActiveWeight(index)}
-                    className={activeWeight === index ? styles.activebutton : ''}
+                    className={activeWeight === index ? styles.activebutton : styles.weightbutton}
                   >
                     {grams} g
                   </button>

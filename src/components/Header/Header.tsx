@@ -25,8 +25,7 @@ export const Header = (): JSX.Element => {
       <div className={styles.header}>
         <Link to="/" className={styles.link}>
           <div className={styles.title}>
-            <h1>Tea Shop</h1>
-            <p>online store of loose leaf tea</p>
+            <h1>TEA SHOP</h1>
           </div>
         </Link>
         {location.pathname !== '/cart' && <Search />}

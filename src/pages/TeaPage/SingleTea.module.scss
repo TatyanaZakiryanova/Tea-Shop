@@ -54,6 +54,12 @@
         }
         .weight {
             display: flex;
+            align-items: center;
+            button {
+                font-size: 15px;
+                padding: 8px;
+                margin: 5px;
+            }
             .activebutton {
                 @include activebutton;
             }
