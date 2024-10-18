@@ -1,20 +1,25 @@
 import { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Spinner } from '../../components/Spinner/Spinner';
-import styles from './SingleTea.module.scss';
 import { FaCartShopping } from 'react-icons/fa6';
-import { selectAddedCartItem } from '../../redux/cartSlice/selectors';
-import useFetchTea from '../../hooks/useFetchTea';
 import { MdOutlineKeyboardDoubleArrowLeft } from 'react-icons/md';
+import { useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+
+import { Spinner } from '../../components/Spinner/Spinner';
 import useAddToCart from '../../hooks/useAddToCart';
+import useFetchTea from '../../hooks/useFetchTea';
+import { cartItemsSelector } from '../../redux/cartSlice/selectors';
+import { selectAddedCartItem } from '../../utils/SelectAddedCartItem';
+import styles from './TeaPage.module.scss';
 
 const TeaPage = () => {
   const [activeWeight, setActiveWeight] = useState<number>(0);
   const { id } = useParams();
   const { tea } = useFetchTea(id);
   const { onClickAddItem } = useAddToCart(tea, activeWeight);
+  const cartItems = useSelector(cartItemsSelector);
 
-  const addedCartItem = selectAddedCartItem(tea?.id, tea?.weight[activeWeight]);
+  const addedCartItem = selectAddedCartItem(cartItems, tea?.id, tea?.weight[activeWeight]);
+
   const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
 
   return (

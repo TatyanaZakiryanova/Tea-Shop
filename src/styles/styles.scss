@@ -1,46 +1,48 @@
 @import '../styles/variables.scss';
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 html {
-    font-size: 16px;
-    height: 100%;
+  font-size: 16px;
+  height: 100%;
 }
 
 body {
-    background-color:  rgb(144, 171, 165);
+  background-color: rgb(144, 171, 165);
 }
 
 button {
-    border: none;
-    font-size: 1.2rem;
-    padding: 7px;
-    box-sizing: border-box;
-    border-radius: $radius;
-    background-color: white;
-    color: rgb(47, 79, 70); 
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    &:hover {
-      background-color: rgb(103, 150, 137); 
+  border: none;
+  font-size: 1.2rem;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: $radius;
+  background-color: white;
+  color: rgb(47, 79, 70);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  &:hover {
+    background-color: rgb(103, 150, 137);
   }
   &:focus {
-      outline: none; 
-      box-shadow: 0 0 0 1px rgba(103, 150, 137, 0.5); 
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(103, 150, 137, 0.5);
   }
 }
 
-  li {
-    list-style-type: none;
-  }
+li {
+  list-style-type: none;
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}

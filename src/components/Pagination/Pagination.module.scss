@@ -3,38 +3,40 @@
 .pagination {
   display: flex;
   justify-content: center;
-    a {
-        background-color: white;
-        color: rgb(47, 79, 70); 
-        border-radius: $radius;
-        margin-top: 20px;
-        margin-right: 4px;
-        padding: 8px;
-        width: 10px;
-        height: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        &:hover {
-          background-color: rgb(103, 150, 137); 
-      }
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; 
+  a {
+    background-color: white;
+    color: rgb(47, 79, 70);
+    border-radius: $radius;
+    margin-top: 20px;
+    margin-right: 4px;
+    padding: 8px;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    &:hover {
+      background-color: rgb(103, 150, 137);
     }
-    :global {
-        .selected {
-          a {
-            background-color: $highlight;
-          }
-        }
-        .disabled {
-          a {
-          background-color: rgb(224, 224, 224);
-          color: rgb(160, 160, 160);
-          cursor: not-allowed;
-          box-shadow: none;
-        }
-      }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease-in-out,
+      color 0.2s ease-in-out;
+  }
+  :global {
+    .selected {
+      a {
+        background-color: $highlight;
       }
     }
+    .disabled {
+      a {
+        background-color: rgb(224, 224, 224);
+        color: rgb(160, 160, 160);
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+    }
+  }
+}

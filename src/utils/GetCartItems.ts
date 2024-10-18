@@ -3,7 +3,7 @@ import { calcTotalCost } from './CalculateCost';
 
 export const GetCartItems = () => {
   const cartData = localStorage.getItem('cart');
-  const items = cartData ? JSON.parse(cartData) : [];
+  const items: CartItem[] | [] = cartData ? JSON.parse(cartData) : [];
   const totalCost = calcTotalCost(items);
 
   return {

@@ -1,28 +1,28 @@
 @import '../../styles/variables';
 
 .spinner {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-top: 20px;
-        font-size: 1.5rem;
-        padding: 150px;
-        background-color: $background;
-        border-radius: $radius;
-        .icon {
-          font-size: 3rem;
-          animation: spin 2s linear infinite;
-          color: rgb(31, 77, 64);
-      }
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  padding: 150px;
+  background-color: $background;
+  border-radius: $radius;
+  .icon {
+    font-size: 3rem;
+    animation: spin 2s linear infinite;
+    color: rgb(31, 77, 64);
+  }
+}
 
 @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}

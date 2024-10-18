@@ -1,4 +1,5 @@
 import { PiSpinner } from 'react-icons/pi';
+
 import styles from './Spinner.module.scss';
 
 export const Spinner = () => {

@@ -1,4 +1,5 @@
 import { IoIosLeaf } from 'react-icons/io';
+
 import styles from './Footer.module.scss';
 
 const Footer = () => {

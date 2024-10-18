@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { setSortParam } from '../../redux/filterSlice/filterSlice';
-import { useAppDispatch } from '../../redux/store';
-import { SortEnum, SortName } from '../../redux/filterSlice/types';
-import styles from './Sort.module.scss';
 import { useSelector } from 'react-redux';
+
+import { setSortParam } from '../../redux/filterSlice/filterSlice';
 import { sortSelector } from '../../redux/filterSlice/selectors';
+import { SortEnum, SortName } from '../../redux/filterSlice/types';
+import { useAppDispatch } from '../../redux/store';
+import styles from './Sort.module.scss';
 
 const sort: SortName[] = [
   {
@@ -41,11 +42,11 @@ export const Sort = (): JSX.Element => {
         </h2>
       </div>
       {activeSort && (
-        <div className={styles.popup}>
+        <div className={styles.dropdown}>
           <ul>
-            {sort.map((obj, index) => (
+            {sort.map((obj) => (
               <li
-                key={index}
+                key={obj.name}
                 onClick={() => onClickSort(obj)}
                 className={sortName.sortParam === obj.sortParam ? styles.active : ''}
               >

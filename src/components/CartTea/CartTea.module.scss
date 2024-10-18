@@ -1,0 +1,43 @@
+.display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  .main {
+    text-align: center;
+    .img {
+      width: 170px;
+      height: 165px;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+  }
+  .inform {
+    text-align: center;
+    font-size: 1.2rem;
+    align-self: center;
+    justify-self: center;
+    .price {
+      font-weight: bold;
+    }
+  }
+  .amount {
+    align-self: center;
+    font-size: 20px;
+    justify-self: center;
+    .amountbutton {
+      margin: 2px;
+      font-size: 15px;
+      width: 20px;
+      height: 30px;
+    }
+  }
+  .remove {
+    font-size: 20px;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    width: 40px;
+  }
+}

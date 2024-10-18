@@ -1,10 +1,11 @@
+import { useEffect, useRef } from 'react';
 import { FaCartShopping } from 'react-icons/fa6';
-import { Link, useLocation } from 'react-router-dom';
-import { Search } from '../Search/Search';
-import { useRef, useEffect } from 'react';
-import styles from './Header.module.scss';
 import { useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
+
 import { cartItemsSelector } from '../../redux/cartSlice/selectors';
+import { Search } from '../Search/Search';
+import styles from './Header.module.scss';
 
 export const Header = (): JSX.Element => {
   const location = useLocation();

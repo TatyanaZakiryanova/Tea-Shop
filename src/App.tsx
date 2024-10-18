@@ -1,13 +1,13 @@
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
-import { Spinner } from './components/Spinner/Spinner';
 
+import { Spinner } from './components/Spinner/Spinner';
 import MainLayout from './layouts/MainLayout';
 import Main from './pages/Main/Main';
-import { DataNotFound } from './pages/NotFound/DataNotFound';
+import { DataNotFound } from './pages/NotFound/NotFound';
 
-const CartPage = lazy(() => import('./pages/CartPage/Cart'));
-const TeaPage = lazy(() => import('./pages/TeaPage/SingleTea'));
+const CartPage = lazy(() => import('./pages/Cart/Cart'));
+const TeaPage = lazy(() => import('./pages/TeaPage/TeaPage'));
 
 export const App = () => {
   return (

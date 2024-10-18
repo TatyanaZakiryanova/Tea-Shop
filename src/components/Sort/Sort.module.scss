@@ -2,57 +2,59 @@
 @import '../../styles/components/activebutton.scss';
 
 .sort {
-    position: relative;
-    .label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.9rem;
-        margin: 0 10px 0 0;
-        @media screen and (max-width: 412px) {
-            font-size: 0.8rem;
-        }
-        @media screen and (max-width: 390px) {
-            font-size: 12px;
-        }
-        @media screen and (max-width: 360px){
-            font-size: 10px;
-        }
-        .icon {
-            font-size: 29px;
-            @media screen and (max-width: 360px){
-                font-size: 1.2rem;
-            }
-        }
-        span {
-            cursor: pointer;
-        }
+  position: relative;
+  .label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    margin: 0 10px 0 0;
+    @media screen and (max-width: 412px) {
+      font-size: 0.8rem;
     }
-    .popup {
-        position: absolute;
-        right: 0;
-        top: 35px;
-        padding: 10px 0;
-        ul {
-            display: flex;
-            flex-direction: column;
-            background-color: $highlight;
-            border-radius: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            li {
-                border: none;
-                font-size: 1.2rem;
-                padding: 15px;
-                box-sizing: border-box;
-                border-radius: 15px;
-                color: black;
-                cursor: pointer;
-                transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; 
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-                &:hover {
-                    background-color: rgba(255, 255, 255, 0.5);
-                }
-            }
-        }
-        }
+    @media screen and (max-width: 390px) {
+      font-size: 12px;
     }
+    @media screen and (max-width: 360px) {
+      font-size: 10px;
+    }
+    .icon {
+      font-size: 29px;
+      @media screen and (max-width: 360px) {
+        font-size: 1.2rem;
+      }
+    }
+    span {
+      cursor: pointer;
+    }
+  }
+  .dropdown {
+    position: absolute;
+    right: 0;
+    top: 35px;
+    padding: 10px 0;
+    ul {
+      display: flex;
+      flex-direction: column;
+      background-color: $highlight;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      li {
+        border: none;
+        font-size: 1.2rem;
+        padding: 15px;
+        box-sizing: border-box;
+        border-radius: 15px;
+        color: black;
+        cursor: pointer;
+        transition:
+          background-color 0.2s ease-in-out,
+          color 0.2s ease-in-out;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+}

@@ -1,15 +1,15 @@
 @import '../variables.scss';
 
 @mixin cartbutton() {
-    align-items: center;
-    margin-top: 30px;
-    padding: 8px;
-    font-size: 25px;
-    min-width: 500px;
-    @media screen and (max-width: 430px) {
-        min-width: 100px;
-    }
-    &:active {
-        background-color: $activebutton;
-    }
+  align-items: center;
+  margin-top: 30px;
+  padding: 8px;
+  font-size: 25px;
+  min-width: 500px;
+  @media screen and (max-width: 430px) {
+    min-width: 100px;
+  }
+  &:active {
+    background-color: $activebutton;
+  }
 }

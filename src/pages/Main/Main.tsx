@@ -1,21 +1,24 @@
 import { useEffect } from 'react';
-import styles from './Main.module.scss';
+import { useSelector } from 'react-redux';
+
 import { Categories } from '../../components/Categories/Categories';
 import ItemsNotFound from '../../components/ItemsNotFound/ItemsNotFound';
 import Pagination from '../../components/Pagination/Pagination';
 import { Sort } from '../../components/Sort/Sort';
 import Skeleton from '../../components/TeaCard/Skeleton';
 import { TeaCard } from '../../components/TeaCard/TeaCard';
-import { useAppDispatch } from '../../redux/store';
-import { fetchTeas } from '../../redux/teaSlice/asyncActions';
-import { useSelector } from 'react-redux';
 import {
   categorySelector,
   currentPageSelector,
   searchValueSelector,
   sortSelector,
 } from '../../redux/filterSlice/selectors';
+import { SortEnum } from '../../redux/filterSlice/types';
+import { useAppDispatch } from '../../redux/store';
+import { fetchTeas } from '../../redux/teaSlice/asyncActions';
 import { itemsSelector, statusSelector } from '../../redux/teaSlice/selectors';
+import { Status } from '../../redux/teaSlice/types';
+import styles from './Main.module.scss';
 
 const Main = (): JSX.Element => {
   const sortType = useSelector(sortSelector);
@@ -30,14 +33,14 @@ const Main = (): JSX.Element => {
   const fetchData = async () => {
     const sortBy = sortType.sortParam;
     const order =
-      sortType.sortParam === 'title' ||
-      ((sortType.sortParam === 'price' || 'rating') && sortType.name.includes('↑'))
+      sortType.sortParam === SortEnum.TITLE ||
+      ((sortType.sortParam === SortEnum.PRICE || SortEnum.RATING) && sortType.name.includes('↑'))
         ? 'asc'
         : 'desc';
     const category = categoryIndex > 0 ? `category=${categoryIndex}` : '';
     const search = searchValue;
 
-    dispatch(
+    await dispatch(
       fetchTeas({
         order,
         category,
@@ -52,7 +55,7 @@ const Main = (): JSX.Element => {
     fetchData();
   }, [categoryIndex, sortType, searchValue, currentPage]);
 
-  const skeleton = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
+  const skeleton = Array.from({ length: 6 }).map((_, index) => <Skeleton key={index} />);
   const teas =
     items.length > 0 ? (
       items.map((obj) => (
@@ -72,7 +75,11 @@ const Main = (): JSX.Element => {
       </div>
       <div className={styles.items}>
         <>
-          {status === 'error' ? <ItemsNotFound /> : <>{status === 'loading' ? skeleton : teas}</>}
+          {status === Status.ERROR ? (
+            <ItemsNotFound />
+          ) : (
+            <>{status === Status.LOADING ? skeleton : teas}</>
+          )}
         </>
       </div>
       <Pagination />

@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { selectAddedCartItem } from '../../redux/cartSlice/selectors';
-import styles from './TeaCard.module.scss';
-import { SingleTea } from '../../pages/TeaPage/types';
+
 import useAddToCart from '../../hooks/useAddToCart';
+import { SingleTea } from '../../pages/TeaPage/types';
+import { cartItemsSelector } from '../../redux/cartSlice/selectors';
+import { selectAddedCartItem } from '../../utils/SelectAddedCartItem';
+import styles from './TeaCard.module.scss';
 
 export const TeaCard: React.FC<SingleTea> = ({
   id,
@@ -16,11 +19,12 @@ export const TeaCard: React.FC<SingleTea> = ({
   description,
 }) => {
   const [activeWeight, setActiveWeight] = useState<number>(0);
+  const cartItems = useSelector(cartItemsSelector);
 
   const tea = { id, imageUrl, title, type, weight, price, rating, description };
   const { onClickAddItem } = useAddToCart(tea, activeWeight);
 
-  const addedCartItem = selectAddedCartItem(id, weight[activeWeight]);
+  const addedCartItem = selectAddedCartItem(cartItems, id, weight[activeWeight]);
   const addedValue = addedCartItem ? `In cart: ${addedCartItem.count}` : `Add to cart`;
 
   return (

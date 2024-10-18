@@ -1,6 +1,7 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Status, Tea, TeaState } from './types';
+import { createSlice,PayloadAction } from '@reduxjs/toolkit';
+
 import { fetchTeas } from './asyncActions';
+import { Status, Tea, TeaState } from './types';
 
 const initialState: TeaState = {
   items: [],

@@ -1,6 +1,7 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+
 import { SingleTea } from '../pages/TeaPage/types';
 
 const useFetchTea = (id: string | undefined) => {
@@ -9,18 +10,19 @@ const useFetchTea = (id: string | undefined) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      if (!id) return;
       try {
-        const { data } = await axios.get('https://6608a863a2a5dd477b14ab61.mockapi.io/items/' + id);
+        const { data } = await axios.get<SingleTea>(
+          'https://6608a863a2a5dd477b14ab61.mockapi.io/items/' + id,
+        );
         setTea(data);
       } catch (error) {
         alert('Loading error');
         navigate('/');
       }
     };
-    if (id) {
-      fetchData();
-    }
-  }, [id]);
+    fetchData();
+  }, [id, navigate]);
   return { tea };
 };
 

@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+
 import { SingleTea } from '../pages/TeaPage/types';
 import { addItem } from '../redux/cartSlice/cartSlice';
 import { CartItem } from '../redux/cartSlice/types';
@@ -25,7 +26,7 @@ const useAddToCart = (tea: SingleTea | null, activeWeight: number) => {
       count: 0,
     };
     dispatch(addItem(item));
-  }, [tea, activeWeight]);
+  }, [dispatch, tea, activeWeight]);
 
   return { onClickAddItem };
 };

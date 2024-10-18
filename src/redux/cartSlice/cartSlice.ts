@@ -1,4 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { calcTotalCost } from '../../utils/CalculateCost';
 import { GetCartItems } from '../../utils/GetCartItems';
 import { CartItem, CartSlice } from './types';

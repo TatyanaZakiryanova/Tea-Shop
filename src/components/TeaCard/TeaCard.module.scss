@@ -2,58 +2,58 @@
 @import '../../styles/components/activebutton.scss';
 
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    .image {
-        height: 240px;
-        width: 240px;
-        transition: all 0.3s ease-in-out;
-        &:hover {
-            transform: scale(0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  .image {
+    height: 240px;
+    width: 240px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(0.9);
     }
+  }
+  .title {
+    font-size: 25px;
+  }
+  .inform {
+    .price {
+      font-size: 20px;
     }
-    .title {
-        font-size: 25px;
+    p {
+      font-size: 15px;
     }
-    .inform {
-        .price {
-            font-size: 20px;
-        }        
-        p {
-            font-size: 15px;
-        }
-        .weight {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            button {
-                font-size: 12px;
-                padding: 5px;
-            }
-        }
-        .activebutton {
-            @include activebutton;
-        }
+    .weight {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        font-size: 12px;
+        padding: 5px;
+      }
     }
-    
-    button {
-        font-size: 1rem;
-        margin: 2px;
+    .activebutton {
+      @include activebutton;
     }
-    
-    .notadded {
-        width: 100px;
-        &:active {
-         background-color: $activebutton;
-        }
+  }
+
+  button {
+    font-size: 1rem;
+    margin: 2px;
+  }
+
+  .notadded {
+    width: 100px;
+    &:active {
+      background-color: $activebutton;
     }
-    .added {
-        width: 100px;
-        background-color: $highlight;
-        &:active {
-            background-color: $activebutton;
-           }
-       }
- }
+  }
+  .added {
+    width: 100px;
+    background-color: $highlight;
+    &:active {
+      background-color: $activebutton;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { IoCartOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+
 import styles from './EmptyCart.module.scss';
 
 const EmptyCart = () => {
@@ -13,7 +14,7 @@ const EmptyCart = () => {
         <h2>Cart is empty</h2>
         <p>Return to the main page to order items:</p>
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-          <button className={styles.back}>Home</button>
+          <button>Home</button>
         </Link>
       </div>
     </>

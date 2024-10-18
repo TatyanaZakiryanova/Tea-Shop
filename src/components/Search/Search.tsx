@@ -1,8 +1,9 @@
-import { LiaSearchSolid } from 'react-icons/lia';
-import { useAppDispatch } from '../../redux/store';
-import { setSearchValue } from '../../redux/filterSlice/filterSlice';
-import { ChangeEvent, useCallback, useState } from 'react';
 import debounce from 'lodash.debounce';
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import { LiaSearchSolid } from 'react-icons/lia';
+
+import { setSearchValue } from '../../redux/filterSlice/filterSlice';
+import { useAppDispatch } from '../../redux/store';
 import styles from './Search.module.scss';
 
 export const Search = () => {
@@ -13,11 +14,19 @@ export const Search = () => {
     debounce((val: string) => {
       dispatch(setSearchValue(val));
     }, 300),
-    [],
+    [dispatch],
   );
 
+  useEffect(() => {
+    return () => {
+      debouncedOnChangeInput.cancel();
+    };
+  }, [debouncedOnChangeInput]);
+
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchText(event.target.value), debouncedOnChangeInput(event.target.value);
+    const value = event.target.value;
+    setSearchText(value);
+    debouncedOnChangeInput(value);
   };
 
   return (
